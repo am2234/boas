@@ -1,0 +1,7 @@
+*.csv#
+.vscode/
+*.pyc
+/figures/
+
+full_results.csv
+new_gen_anon_results.py
