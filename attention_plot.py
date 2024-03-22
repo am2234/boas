@@ -67,7 +67,7 @@ def plot_attn_audio(signal_ax, spec_ax, color_ax, audio, fs, attention, t0=0, t1
 
 fs, series = scipy.io.wavfile.read("data/attention_example.wav")
 
-fig = plt.figure(figsize=(6.2, 3.4), dpi=300)
+fig = plt.figure(figsize=(6.2, 3.4), dpi=500)
 gs = matplotlib.gridspec.GridSpec(
     2, 2, wspace=0.04, hspace=0.12, width_ratios=[20, 1], left=0.05, right=0.95, top=0.95
 )
@@ -78,4 +78,4 @@ color_ax = fig.add_subplot(gs[3])
 attn = np.loadtxt("data/attention_weights.csv", delimiter=",")
 
 plot_attn_audio(signal_ax, spec_ax, color_ax, series, fs, attn, 7, 17)
-plt.savefig("figures/attention.png", bbox_inches="tight")
+plt.savefig("figures/attention.tif", bbox_inches="tight")

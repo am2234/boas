@@ -18,9 +18,9 @@ pairs = []
 for _, _df in stertor_df.groupby(["loop", "fold"]):
     pairs.append((_df["logits_2"], _df["stertor"] >= 2))  # Target is moderate stertor or greater
 
-fig, axes = plt.subplots(figsize=(4.6, 4.6), dpi=300)
+fig, axes = plt.subplots(figsize=(4.6, 4.6), dpi=500)
 utils.prepare_roc_plot(axes)
 utils.plot_averaged_roc(axes, pairs, std_dev=1, op_point=True, op_decimals=0, alpha_fill=0.1)
 axes.legend()
 
-plt.savefig("figures/roc_stertor.png", bbox_inches="tight")
+plt.savefig("figures/roc_stertor.tif", bbox_inches="tight")

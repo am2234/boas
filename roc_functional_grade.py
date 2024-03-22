@@ -23,7 +23,7 @@ for _, _df in full_df.groupby(["loop", "fold"]):
     pairs.append((_df["logits_2"], _df["functional_grade"] >= 2))  # Target is moderate or greater
 
 # Plot averaged ROC
-fig, axes = plt.subplots(figsize=(4.6, 4.6), dpi=300)
+fig, axes = plt.subplots(figsize=(4.6, 4.6), dpi=500)
 utils.prepare_roc_plot(axes)
 _, mean_fpr, mean_tpr, _, _ = utils.plot_averaged_roc(
     axes, pairs, std_dev=1, op_point=False, op_decimals=0, alpha_fill=0.1
@@ -70,4 +70,4 @@ axes.plot(
 
 
 axes.legend()
-plt.savefig("figures/roc_functional_grade.png", bbox_inches="tight")
+plt.savefig("figures/roc_functional_grade.tif", bbox_inches="tight")

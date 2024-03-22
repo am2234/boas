@@ -24,7 +24,7 @@ def plot_signal_and_spec(filename, t0, t1):
     spec, spec_fs = utils.spectrogram(series, fs)
     spec = spec[:, int(spec_fs * t0) : int(spec_fs * t1) + 2]
 
-    fig = plt.figure(figsize=(6.2, 3.4), dpi=300)
+    fig = plt.figure(figsize=(6.2, 3.4), dpi=500)
     gs = plt.GridSpec(
         2, 2, wspace=0.04, hspace=0.08, width_ratios=[20, 1], left=0.05, right=0.95, top=0.95
     )
@@ -61,8 +61,8 @@ def plot_signal_and_spec(filename, t0, t1):
 
 # Moderate (constant) stertor
 plot_signal_and_spec("data/moderate_stertor.wav", 17, 26)
-plt.savefig("figures/stertor_spec.png", bbox_inches="tight")
+plt.savefig("figures/stertor_spec.tif", bbox_inches="tight")
 
 # Healthy
 plot_signal_and_spec("data/healthy.wav", 5, 15)
-plt.savefig("figures/healthy_spec.png", bbox_inches="tight")
+plt.savefig("figures/healthy_spec.tif", bbox_inches="tight")
