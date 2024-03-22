@@ -101,7 +101,7 @@ def plot_averaged_roc(
             100 * op_se,
             "o",
             c=col,
-            label=f"OP (Se = {op_se*100:.{op_decimals}f}%, Sp={op_sp*100:.{op_decimals}f}%)",
+            label=f"OP (Se = {op_se*100:.{op_decimals}f}%, Sp = {op_sp*100:.{op_decimals}f}%)",
         )
         print(1 - mean_fpr[best], mean_tpr[best], std_tpr[best])
         print(
